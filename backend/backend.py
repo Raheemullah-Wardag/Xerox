@@ -1,146 +1,25 @@
+import json
+import os
 
 shopping_cart = []
 
-# PRODUCTS CATALOGUE
-products = [
-    {
-        "id": 1,
-        "title": "Men's Summer Cotton Shirt",
-        "price": 22.99,
-        "description": "Lightweight breathable cotton shirt ideal for hot summer days.",
-        "category": "summer",
-        "subcategory": "men",
-        "quantity": 35
-    },
-    {
-        "id": 2,
-        "title": "Women's Floral Summer Dress",
-        "price": 28.50,
-        "description": "Soft flowy dress designed for comfort and summer outings.",
-        "category": "summer",
-        "subcategory": "women",
-        "quantity": 18
-    },
-    {
-        "id": 3,
-        "title": "Kids Printed Summer T-Shirt",
-        "price": 9.99,
-        "description": "Comfortable cotton tee with cute summer-themed prints.",
-        "category": "summer",
-        "subcategory": "kids",
-        "quantity": 42
-    },
-    {
-        "id": 4,
-        "title": "Men's Summer Shorts",
-        "price": 17.00,
-        "description": "Soft cotton shorts perfect for daily casual wear.",
-        "category": "summer",
-        "subcategory": "men",
-        "quantity": 27
-    },
-    {
-        "id": 5,
-        "title": "Women's Sleeveless Tank Top",
-        "price": 12.99,
-        "description": "Lightweight sleeveless top ideal for hot weather.",
-        "category": "summer",
-        "subcategory": "women",
-        "quantity": 50
-    },
-    {
-        "id": 6,
-        "title": "Kids Summer Shorts",
-        "price": 11.50,
-        "description": "Durable and comfortable shorts perfect for outdoor play.",
-        "category": "summer",
-        "subcategory": "kids",
-        "quantity": 31
-    },
-    {
-        "id": 7,
-        "title": "Men's Winter Fleece Jacket",
-        "price": 39.99,
-        "description": "Warm fleece jacket offering comfort in cold weather.",
-        "category": "winter",
-        "subcategory": "men",
-        "quantity": 14
-    },
-    {
-        "id": 8,
-        "title": "Women's Woolen Sweater",
-        "price": 32.00,
-        "description": "Soft knitted sweater for cozy winter evenings.",
-        "category": "winter",
-        "subcategory": "women",
-        "quantity": 22
-    },
-    {
-        "id": 9,
-        "title": "Kids Hooded Winter Hoodie",
-        "price": 19.99,
-        "description": "Warm hoodie designed to keep kids comfortable in winter.",
-        "category": "winter",
-        "subcategory": "kids",
-        "quantity": 19
-    },
-    {
-        "id": 10,
-        "title": "Men's Thermal Innerwear Set",
-        "price": 25.99,
-        "description": "Insulated thermal wear for layering in cold climates.",
-        "category": "winter",
-        "subcategory": "men",
-        "quantity": 26
-    },
-    {
-        "id": 11,
-        "title": "Women's Winter Puffer Jacket",
-        "price": 55.50,
-        "description": "Thick puffer jacket providing extra warmth in harsh winters.",
-        "category": "winter",
-        "subcategory": "women",
-        "quantity": 12
-    },
-    {
-        "id": 12,
-        "title": "Kids Winter Beanie Cap",
-        "price": 8.50,
-        "description": "Soft woolen beanie to keep children warm in winter.",
-        "category": "winter",
-        "subcategory": "kids",
-        "quantity": 60
-    },
-    {
-        "id": 13,
-        "title": "Men's Lightweight Summer Polo",
-        "price": 16.75,
-        "description": "Breathable polo shirt ideal for warm summer days.",
-        "category": "summer",
-        "subcategory": "men",
-        "quantity": 33
-    },
-    {
-        "id": 14,
-        "title": "Women's Winter Scarf",
-        "price": 14.00,
-        "description": "Soft wool scarf offering warmth and style.",
-        "category": "winter",
-        "subcategory": "women",
-        "quantity": 45
-    },
-    {
-        "id": 15,
-        "title": "Kids Summer Sandals",
-        "price": 13.99,
-        "description": "Comfortable lightweight sandals perfect for summer.",
-        "category": "summer",
-        "subcategory": "kids",
-        "quantity": 29
-    }
-]
+# ---------------- FILE HANDLING ----------------
 
-# ADMIN LOGIN 
+def load_products():
+    if os.path.exists("products.json"):
+        with open("products.json", "r") as file:
+            return json.load(file)
+    return []
+
+def save_products(products):
+    with open("products.json", "w") as file:
+        json.dump(products, file, indent=4)
+
+# Load products permanently
+products = load_products()
+
+# ---------------- ADMIN LOGIN ----------------
+
 ADMIN_USER = "admin"
 ADMIN_PASS = "admin123"
 
@@ -155,14 +34,17 @@ def login():
         print("\nWelcome Customer!")
         show_products()
 
-#  ADMIN PANEL 
+# ---------------- ADMIN PANEL ----------------
+
 def admin_panel():
     while True:
         print("\n--- ADMIN PANEL ---")
         print("1. View Products")
         print("2. Increase Quantity")
         print("3. Decrease Quantity")
-        print("4. Logout")
+        print("4. Adjust Price")
+        print("5. Add Product")
+        print("6. Logout")
 
         choice = input("Choose => ")
 
@@ -173,20 +55,70 @@ def admin_panel():
         elif choice == '3':
             decrease_quantity()
         elif choice == '4':
+            adjust_price()
+        elif choice == '5':
+            add_product()
+        elif choice == '6':
             break
         else:
             print("Invalid choice")
 
 def admin_view_products():
     for item in products:
-        print(f"ID: {item['id']} | {item['title']} | Qty: {item['quantity']}")
+        print(f"ID: {item['id']} | {item['title']} | Qty: {item['quantity']} | Price: {item['price']}")
+
+# ---------------- ADD PRODUCT ----------------
+
+def add_product():
+    product = {}
+
+    product["id"] = max([p["id"] for p in products], default=0) + 1
+    product["title"] = input("Enter product title: ")
+    product["price"] = float(input("Enter product price: "))
+    product["description"] = input("Enter product description: ")
+
+    while True:
+        category = input("Enter category (summer/winter): ").lower()
+        if category in ["summer", "winter"]:
+            product["category"] = category
+            break
+        print("Invalid category!")
+
+    while True:
+        subcategory = input("Enter subcategory (men/women/kids): ").lower()
+        if subcategory in ["men", "women", "kids"]:
+            product["subcategory"] = subcategory
+            break
+        print("Invalid subcategory!")
+
+    product["quantity"] = int(input("Enter quantity: "))
+
+    products.append(product)
+    save_products(products)
+    print("Product added successfully!")
+
+# ---------------- STOCK & PRICE ----------------
+
+def adjust_price():
+    pid = int(input("Enter Product ID => "))
+    price = float(input("Enter new price => "))
+
+    for item in products:
+        if item["id"] == pid:
+            item["price"] = price
+            save_products(products)
+            print("Price updated")
+            return
+    print("Product not found")
 
 def increase_quantity():
     pid = int(input("Enter Product ID => "))
     qty = int(input("Enter quantity to add => "))
+
     for item in products:
         if item["id"] == pid:
             item["quantity"] += qty
+            save_products(products)
             print("Quantity updated")
             return
     print("Product not found")
@@ -194,97 +126,69 @@ def increase_quantity():
 def decrease_quantity():
     pid = int(input("Enter Product ID => "))
     qty = int(input("Enter quantity to remove => "))
+
     for item in products:
         if item["id"] == pid:
             if item["quantity"] >= qty:
                 item["quantity"] -= qty
+                save_products(products)
                 print("Quantity updated")
             else:
                 print("Not enough stock")
             return
     print("Product not found")
 
-#  SHOPPING CART 
+# ---------------- SHOPPING CART ----------------
+
 def cart():
-    buy = int(input("Enter Product ID to add => "))
+    pid = int(input("Enter Product ID to add => "))
 
     for item in products:
-        if item["id"] == buy:
+        if item["id"] == pid:
             if item["quantity"] > 0:
                 shopping_cart.append(item)
                 item["quantity"] -= 1
+                save_products(products)
                 print("Added to cart")
             else:
                 print("Out of stock")
             break
     else:
         print("Invalid Product ID")
-        show_products()
         return
 
-    
     while True:
         choice = input("Checkout? (Y/N) => ").upper()
-
         if choice == 'Y':
-            generate_bill(shopping_cart)
+            generate_bill()
             return
         elif choice == 'N':
             show_products()
             return
         else:
-            print("Invalid input! Please enter Y or N.")
+            print("Invalid input")
 
+# ---------------- BILLING ----------------
 
-# BILLING 
-def generate_bill(cart):
+def generate_bill():
+    total = 0
+    print("\n--- CART ITEMS ---")
 
-    while True:
-        total = 0
-        print("\n--- CART ITEMS ---")
+    for item in shopping_cart:
+        print(f"{item['id']} | {item['title']} | {item['price']} USD")
+        total += item["price"]
 
-        if not cart:
-            print("Your cart is empty.")
-            return
+    print(f"Total Bill: {round(total, 2)} USD")
+    print("Thank you for shopping!")
 
-        for item in cart:
-            print(f"{item['id']} | {item['title']} | {item['price']} USD")
-            total += item["price"]
+# ---------------- PRODUCT DISPLAY ----------------
 
-        print(f"Total Bill: {round(total,2)} USD")
-
-        choice = input("\nDo you want to remove any item? (Y/N) => ").upper()
-
-        if choice == 'Y':
-            rid = int(input("Enter Product ID to remove => "))
-            found = False
-
-            for item in cart:
-                if item["id"] == rid:
-                    item["quantity"] += 1   # restore stock
-                    cart.remove(item)
-                    print("Item removed successfully.")
-                    found = True
-                    break
-
-            if not found:
-                print("Product not found in cart.")
-
-        else:
-            checkout = input("\nProceed to checkout? (Y/N) => ").upper()
-            if checkout == 'Y':
-                print("\nThank you for shopping with us!")
-                return
-
-#  PRODUCT DISPLAY
 def show_products():
     for i in products:
         print(f"{i['id']} | {i['title']} | {i['price']} USD")
 
-    # SAFE INPUT LOOP
     while True:
         choice = input("Add product to cart? (Y/N) => ").upper()
-
         if choice == 'Y':
             cart()
             return
@@ -292,7 +196,9 @@ def show_products():
             print("Thank you for browsing!")
             return
         else:
-            print("Invalid input! Please enter Y or N.")
+            print("Invalid input")
 
-#  START PROGRAM
+# ---------------- START PROGRAM ----------------
+
 login()
+    
