@@ -1,0 +1,308 @@
+[
+    {
+        "id": 1,
+        "title": "Men's Summer Cotton Shirt",
+        "price": 22.99,
+        "description": "Lightweight breathable cotton shirt ideal for hot summer days.",
+        "category": "summer",
+        "subcategory": "men",
+        "quantity": 35
+    },
+    {
+        "id": 2,
+        "title": "Women's Floral Summer Dress",
+        "price": 28.5,
+        "description": "Soft flowy dress designed for comfort and summer outings.",
+        "category": "summer",
+        "subcategory": "women",
+        "quantity": 18
+    },
+    {
+        "id": 3,
+        "title": "Kids Printed Summer T-Shirt",
+        "price": 9.99,
+        "description": "Comfortable cotton tee with cute summer-themed prints.",
+        "category": "summer",
+        "subcategory": "kids",
+        "quantity": 42
+    },
+    {
+        "id": 4,
+        "title": "Men's Summer Shorts",
+        "price": 17.0,
+        "description": "Soft cotton shorts perfect for daily casual wear.",
+        "category": "summer",
+        "subcategory": "men",
+        "quantity": 27
+    },
+    {
+        "id": 5,
+        "title": "Women's Sleeveless Tank Top",
+        "price": 12.99,
+        "description": "Lightweight sleeveless top ideal for hot weather.",
+        "category": "summer",
+        "subcategory": "women",
+        "quantity": 49
+    },
+    {
+        "id": 6,
+        "title": "Kids Summer Shorts",
+        "price": 11.5,
+        "description": "Durable and comfortable shorts perfect for outdoor play.",
+        "category": "summer",
+        "subcategory": "kids",
+        "quantity": 31
+    },
+    {
+        "id": 7,
+        "title": "Men's Winter Fleece Jacket",
+        "price": 39.99,
+        "description": "Warm fleece jacket offering comfort in cold weather.",
+        "category": "winter",
+        "subcategory": "men",
+        "quantity": 14
+    },
+    {
+        "id": 8,
+        "title": "Women's Woolen Sweater",
+        "price": 32.0,
+        "description": "Soft knitted sweater for cozy winter evenings.",
+        "category": "winter",
+        "subcategory": "women",
+        "quantity": 22
+    },
+    {
+        "id": 9,
+        "title": "Kids Hooded Winter Hoodie",
+        "price": 19.99,
+        "description": "Warm hoodie designed to keep kids comfortable in winter.",
+        "category": "winter",
+        "subcategory": "kids",
+        "quantity": 19
+    },
+    {
+        "id": 10,
+        "title": "Men's Thermal Innerwear Set",
+        "price": 25.99,
+        "description": "Insulated thermal wear for layering in cold climates.",
+        "category": "winter",
+        "subcategory": "men",
+        "quantity": 26
+    },
+    {
+        "id": 11,
+        "title": "Women's Winter Puffer Jacket",
+        "price": 55.5,
+        "description": "Thick puffer jacket providing extra warmth in harsh winters.",
+        "category": "winter",
+        "subcategory": "women",
+        "quantity": 12
+    },
+    {
+        "id": 12,
+        "title": "Kids Winter Beanie Cap",
+        "price": 8.5,
+        "description": "Soft woolen beanie to keep children warm in winter.",
+        "category": "winter",
+        "subcategory": "kids",
+        "quantity": 60
+    },
+    {
+        "id": 13,
+        "title": "Men's Lightweight Summer Polo",
+        "price": 16.75,
+        "description": "Breathable polo shirt ideal for warm summer days.",
+        "category": "summer",
+        "subcategory": "men",
+        "quantity": 33
+    },
+    {
+        "id": 14,
+        "title": "Women's Winter Scarf",
+        "price": 14.0,
+        "description": "Soft wool scarf offering warmth and style.",
+        "category": "winter",
+        "subcategory": "women",
+        "quantity": 45
+    },
+    {
+        "id": 15,
+        "title": "Kids Summer Sandals",
+        "price": 13.99,
+        "description": "Comfortable lightweight sandals perfect for summer.",
+        "category": "summer",
+        "subcategory": "kids",
+        "quantity": 29
+    },
+    {
+        "id": 16,
+        "title": "Men's Summer Linen Shirt",
+        "price": 24.99,
+        "description": "Breathable linen shirt designed for extreme summer heat.",
+        "category": "summer",
+        "subcategory": "men",
+        "quantity": 40
+    },
+    {
+        "id": 17,
+        "title": "Women's Summer Maxi Dress",
+        "price": 34.5,
+        "description": "Elegant maxi dress perfect for summer evenings.",
+        "category": "summer",
+        "subcategory": "women",
+        "quantity": 20
+    },
+    {
+        "id": 18,
+        "title": "Kids Summer Cap",
+        "price": 6.99,
+        "description": "Lightweight cap to protect kids from sunlight.",
+        "category": "summer",
+        "subcategory": "kids",
+        "quantity": 55
+    },
+    {
+        "id": 19,
+        "title": "Men's Winter Leather Gloves",
+        "price": 18.99,
+        "description": "Insulated leather gloves for cold winter days.",
+        "category": "winter",
+        "subcategory": "men",
+        "quantity": 25
+    },
+    {
+        "id": 20,
+        "title": "Women's Winter Thermal Leggings",
+        "price": 21.5,
+        "description": "Warm thermal leggings for winter comfort.",
+        "category": "winter",
+        "subcategory": "women",
+        "quantity": 30
+    },
+    {
+        "id": 21,
+        "title": "Kids Winter Mittens",
+        "price": 7.5,
+        "description": "Soft wool mittens to keep kids' hands warm.",
+        "category": "winter",
+        "subcategory": "kids",
+        "quantity": 60
+    },
+    {
+        "id": 22,
+        "title": "Men's Summer Sports Shorts",
+        "price": 15.99,
+        "description": "Quick-dry shorts ideal for workouts and summer sports.",
+        "category": "summer",
+        "subcategory": "men",
+        "quantity": 35
+    },
+    {
+        "id": 23,
+        "title": "Women's Summer Crop Top",
+        "price": 14.75,
+        "description": "Stylish crop top perfect for casual summer wear.",
+        "category": "summer",
+        "subcategory": "women",
+        "quantity": 45
+    },
+    {
+        "id": 24,
+        "title": "Kids Summer Flip Flops",
+        "price": 5.99,
+        "description": "Comfortable flip flops for beach and home use.",
+        "category": "summer",
+        "subcategory": "kids",
+        "quantity": 70
+    },
+    {
+        "id": 25,
+        "title": "Men's Winter Wool Coat",
+        "price": 79.99,
+        "description": "Premium wool coat for formal winter occasions.",
+        "category": "winter",
+        "subcategory": "men",
+        "quantity": 9
+    },
+    {
+        "id": 26,
+        "title": "Women's Winter Knitted Gloves",
+        "price": 9.99,
+        "description": "Soft knitted gloves offering warmth and comfort.",
+        "category": "winter",
+        "subcategory": "women",
+        "quantity": 50
+    },
+    {
+        "id": 27,
+        "title": "Kids Winter Snow Boots",
+        "price": 29.99,
+        "description": "Waterproof boots designed for snowy conditions.",
+        "category": "winter",
+        "subcategory": "kids",
+        "quantity": 13
+    },
+    {
+        "id": 28,
+        "title": "Men's Summer Sleeveless Vest",
+        "price": 11.99,
+        "description": "Light cotton vest for hot summer days.",
+        "category": "summer",
+        "subcategory": "men",
+        "quantity": 60
+    },
+    {
+        "id": 29,
+        "title": "Women's Summer Sun Hat",
+        "price": 10.5,
+        "description": "Wide-brim hat for sun protection and style.",
+        "category": "summer",
+        "subcategory": "women",
+        "quantity": 28
+    },
+    {
+        "id": 30,
+        "title": "Kids Winter Pajama Set",
+        "price": 17.99,
+        "description": "Warm pajama set for cozy winter nights.",
+        "category": "winter",
+        "subcategory": "kids",
+        "quantity": 25
+    },
+    {
+        "id": 31,
+        "title": "T-Shirt",
+        "price": 20.0,
+        "description": "Made with pure cotton,bratheable best for summers. ",
+        "category": "summer",
+        "subcategory": "men",
+        "quantity": 24
+    },
+    {
+        "id": 32,
+        "title": "Leather Jacket",
+        "price": 200.0,
+        "description": "Premium Leather Jacket.",
+        "category": "winter",
+        "subcategory": "men",
+        "quantity": 48
+    },
+    {
+        "id": 33,
+        "title": "Denim Jeans",
+        "price": 100.0,
+        "description": "Made of Pure Cotton.",
+        "category": "summer",
+        "subcategory": "women",
+        "quantity": 50
+    },
+    {
+        "id": 34,
+        "title": "T-Shirt",
+        "price": 20.0,
+        "description": "Premium Branded T-Shirt.",
+        "category": "summer",
+        "subcategory": "kids",
+        "quantity": 40
+    }
+]
