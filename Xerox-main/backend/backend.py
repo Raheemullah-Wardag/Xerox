@@ -138,44 +138,18 @@ def decrease_quantity():
             return
     print("Product not found")
 
+# ---------------- SHOPPING CART ----------------
+
 def cart():
     pid = int(input("Enter Product ID to add => "))
 
-    # Find the product
     for item in products:
         if item["id"] == pid:
             if item["quantity"] > 0:
-                while True:
-                    try:
-                        qty = int(input(f"How many '{item['title']}' do you want to add? Available: {item['quantity']} => "))
-                        if qty <= 0:
-                            print("Quantity must be at least 1")
-                        elif qty > item["quantity"]:
-                            print(f"Only {item['quantity']} items are available. Please enter a valid quantity.")
-                        else:
-                            break
-                    except ValueError:
-                        print("Please enter a valid number.")
-
-                # Check if product already in cart
-                for cart_item in shopping_cart:
-                    if cart_item["id"] == pid:
-                        cart_item["cart_quantity"] += qty
-                        break
-                else:
-                    # Add new product to cart with cart_quantity
-                    new_item = {
-                        "id": item["id"],
-                        "title": item["title"],
-                        "price": item["price"],
-                        "cart_quantity": qty
-                    }
-                    shopping_cart.append(new_item)
-
-                # Update stock
-                item["quantity"] -= qty
+                shopping_cart.append(item)
+                item["quantity"] -= 1
                 save_products(products)
-                print(f"Added {qty} x '{item['title']}' to cart")
+                print("Added to cart")
             else:
                 print("Out of stock")
             break
@@ -183,7 +157,6 @@ def cart():
         print("Invalid Product ID")
         return
 
-    # Checkout option
     while True:
         choice = input("Checkout? (Y/N) => ").upper()
         if choice == 'Y':
@@ -194,20 +167,19 @@ def cart():
             return
         else:
             print("Invalid input")
-# --------generate bill-----------
+
+# ---------------- BILLING ----------------
+
 def generate_bill():
     total = 0
     print("\n--- CART ITEMS ---")
-    
+
     for item in shopping_cart:
-        # Use only price * cart_quantity
-        line_total = item["price"] * item["cart_quantity"]
-        print(f"{item['id']} | {item['title']} | Price: {item['price']} USD | Quantity: {item['cart_quantity']} | Sub Total: {round(line_total,2)} USD")
-        total += line_total
+        print(f"{item['id']} | {item['title']} | {item['price']} USD")
+        total += item["price"]
 
-    print(f"\nTotal Bill: {round(total, 2)} USD")
+    print(f"Total Bill: {round(total, 2)} USD")
     print("Thank you for shopping!")
-
 
 # ---------------- PRODUCT DISPLAY ----------------
 

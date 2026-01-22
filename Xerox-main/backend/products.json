@@ -42,7 +42,7 @@
         "description": "Lightweight sleeveless top ideal for hot weather.",
         "category": "summer",
         "subcategory": "women",
-        "quantity": 49
+        "quantity": 50
     },
     {
         "id": 6,
@@ -222,7 +222,7 @@
         "description": "Premium wool coat for formal winter occasions.",
         "category": "winter",
         "subcategory": "men",
-        "quantity": 9
+        "quantity": 10
     },
     {
         "id": 26,
@@ -240,7 +240,7 @@
         "description": "Waterproof boots designed for snowy conditions.",
         "category": "winter",
         "subcategory": "kids",
-        "quantity": 13
+        "quantity": 15
     },
     {
         "id": 28,
@@ -258,7 +258,7 @@
         "description": "Wide-brim hat for sun protection and style.",
         "category": "summer",
         "subcategory": "women",
-        "quantity": 28
+        "quantity": 38
     },
     {
         "id": 30,
@@ -267,42 +267,6 @@
         "description": "Warm pajama set for cozy winter nights.",
         "category": "winter",
         "subcategory": "kids",
-        "quantity": 25
-    },
-    {
-        "id": 31,
-        "title": "T-Shirt",
-        "price": 20.0,
-        "description": "Made with pure cotton,bratheable best for summers. ",
-        "category": "summer",
-        "subcategory": "men",
-        "quantity": 24
-    },
-    {
-        "id": 32,
-        "title": "Leather Jacket",
-        "price": 200.0,
-        "description": "Premium Leather Jacket.",
-        "category": "winter",
-        "subcategory": "men",
-        "quantity": 48
-    },
-    {
-        "id": 33,
-        "title": "Denim Jeans",
-        "price": 100.0,
-        "description": "Made of Pure Cotton.",
-        "category": "summer",
-        "subcategory": "women",
-        "quantity": 50
-    },
-    {
-        "id": 34,
-        "title": "T-Shirt",
-        "price": 20.0,
-        "description": "Premium Branded T-Shirt.",
-        "category": "summer",
-        "subcategory": "kids",
-        "quantity": 40
+        "quantity": 27
     }
 ]
